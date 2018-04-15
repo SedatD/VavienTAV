@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">VavienTAV</string>
+    <string name="bold"><![CDATA[p><b>Check-in İşlemleri</b> ]]></string>
+    <string name="boldd"><![CDATA[p><b>Kapı Geçiş Güvenlik Talimatları</b> ]]></string>
 </resources>
