@@ -1,26 +1,19 @@
 package agency.vavien.vavientav;
 
+import android.content.Context;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
-import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.RetryPolicy;
 import com.android.volley.ServerError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.HttpResponse;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.onesignal.OneSignal;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,40 +21,62 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
-public class LogicActivity extends AppCompatActivity {
-    private static final String TAG = "LogicAct";
+/**
+ * Created by Sedat
+ * on 15.04.2018.
+ */
+
+public class LogicUtil {
+    private int flightNumber = -1;
+    private Context context;
+
+    private static final String TAG = "LogicUtil";
     private static final String baseUrl = "http://35.159.15.121:8080/";
     private String url = "aodbFlights/afmsFlights";
     private String startDate = "15/04/2018 18:00", endDate = "15/04/2018 18:10";
-    private Airport airport = new Airport();
-    private ArrayList<Flight> flightArrayList = new ArrayList<>();
+    public Airport airport = new Airport();
+    public ArrayList<Flight> flightArrayList = new ArrayList<>();
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_logic);
+    public LogicUtil(Context context) {
+        this.context = context;
+    }
 
+    public LogicUtil(Context context, int flightNumber) {
+        this.context = context;
+        this.flightNumber = flightNumber;
+    }
+
+    public LogicUtil(Context context, String startDate, String endDate) {
+        this.context = context;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    public LogicUtil(Context context, String startDate, String endDate, int flightNumber) {
+        this.context = context;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.flightNumber = flightNumber;
+    }
+
+    public void urlMetre() {
         url = baseUrl + url;
 
         Uri.Builder builder = Uri.parse(url).buildUpon();
         builder.appendQueryParameter("startDate", startDate);
         builder.appendQueryParameter("endDate", endDate);
+        if (flightNumber != -1)
+            builder.appendQueryParameter("endDate", flightNumber + "");
 
         url = builder.toString();
-
-        Log.wtf(TAG, "url : " + url);
 
         getRequest();
     }
 
     private void getRequest() {
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        RequestQueue queue = Volley.newRequestQueue(context);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override

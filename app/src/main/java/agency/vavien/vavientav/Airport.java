@@ -8,30 +8,30 @@ package agency.vavien.vavientav;
 public class Airport {
     private int intensity = -1, totalArrivalCount = 0, totalDepartureCount = 0;
 
-    public Airport() {
+    Airport() {
     }
 
     public int getIntensity() {
         return intensity;
     }
 
-    public int getTotalArrivalCount() {
+    int getTotalArrivalCount() {
         return totalArrivalCount;
     }
 
-    public int getTotalDepartureCount() {
+    int getTotalDepartureCount() {
         return totalDepartureCount;
     }
 
-    public void setIntensity(int intensity) {
+    void setIntensity(int intensity) {
         this.intensity = intensity;
     }
 
-    public void setTotalArrivalCount(int totalArrivalCount) {
+    void setTotalArrivalCount(int totalArrivalCount) {
         this.totalArrivalCount = totalArrivalCount;
     }
 
-    public void setTotalDepartureCount(int totalDepartureCount) {
+    void setTotalDepartureCount(int totalDepartureCount) {
         this.totalDepartureCount = totalDepartureCount;
     }
 

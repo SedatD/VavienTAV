@@ -22,6 +22,7 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [
                 onesignal_app_id               : '42238333-b61f-49f6-b02e-61cfbc122dec',
@@ -43,7 +44,10 @@ dependencies {
     compile 'com.google.firebase:firebase-core:12.0.1'
     compile 'com.onesignal:OneSignal:[3.8.3, 3.99.99]'
     compile 'com.android.volley:volley:1.1.0'
+    compile 'com.android.support:multidex:1.0.0'
     testImplementation 'junit:junit:4.12'
+    compile 'com.google.android.gms:play-services-location:11.6.0'
+    compile 'com.google.android.gms:play-services-maps:11.6.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }

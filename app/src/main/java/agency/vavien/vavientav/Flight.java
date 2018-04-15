@@ -49,115 +49,115 @@ public class Flight {
         this.endDate = endDate;
     }
 
-    public void setStartDate(String startDate) {
+    void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public void setEndDate(String endDate) {
+    void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
-    public void setFoodSuggest(String foodSuggest) {
+    void setFoodSuggest(String foodSuggest) {
         this.foodSuggest = foodSuggest;
     }
 
-    public String getFoodSuggest() {
+    String getFoodSuggest() {
         return foodSuggest;
     }
 
-    public String getAirlineName() {
+    String getAirlineName() {
         return airlineName;
     }
 
-    public String getAirlineIATACode() {
+    String getAirlineIATACode() {
         return airlineIATACode;
     }
 
-    public String getAirlineICAOCode() {
+    String getAirlineICAOCode() {
         return airlineICAOCode;
     }
 
-    public String getRegistrationNo() {
+    String getRegistrationNo() {
         return registrationNo;
     }
 
-    public String getSubTypeICAOCode() {
+    String getSubTypeICAOCode() {
         return subTypeICAOCode;
     }
 
-    public String getGateResource() {
+    String getGateResource() {
         return gateResource;
     }
 
-    public String getStandResource() {
+    String getStandResource() {
         return standResource;
     }
 
-    public String getOriginIATACode() {
+    String getOriginIATACode() {
         return originIATACode;
     }
 
-    public String getOriginICAOCode() {
+    String getOriginICAOCode() {
         return originICAOCode;
     }
 
-    public String getOriginCity() {
+    String getOriginCity() {
         return originCity;
     }
 
-    public String getOriginCountry() {
+    String getOriginCountry() {
         return originCountry;
     }
 
-    public String getOriginRegion() {
+    String getOriginRegion() {
         return originRegion;
     }
 
-    public String getDestinationIATACode() {
+    String getDestinationIATACode() {
         return destinationIATACode;
     }
 
-    public String getDestinationICAOCode() {
+    String getDestinationICAOCode() {
         return destinationICAOCode;
     }
 
-    public String getDestinationCity() {
+    String getDestinationCity() {
         return destinationCity;
     }
 
-    public String getDestinationCountry() {
+    String getDestinationCountry() {
         return destinationCountry;
     }
 
-    public String getDestinationRegion() {
+    String getDestinationRegion() {
         return destinationRegion;
     }
 
-    public int getFlightNumber() {
+    int getFlightNumber() {
         return flightNumber;
     }
 
-    public int getSubTypeIATACode() {
+    int getSubTypeIATACode() {
         return subTypeIATACode;
     }
 
-    public int getCapacity() {
+    int getCapacity() {
         return capacity;
     }
 
-    public char getFlightCategory() {
+    char getFlightCategory() {
         return flightCategory;
     }
 
-    public char getLeg() {
+    char getLeg() {
         return leg;
     }
 
-    public String getStartDate() {
+    String getStartDate() {
         return startDate;
     }
 
-    public String getEndDate() {
+    String getEndDate() {
         return endDate;
     }
 
